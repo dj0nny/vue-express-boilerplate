@@ -5,8 +5,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: path.resolve(__dirname, '../public'),
   devServer: {
-    'api/': {
-      target: 'http://localhost:5656',
-    }
-  }
+    proxy: {
+      'api/': {
+        target: 'http://localhost:5656',
+      },
+    },
+  },
 });
