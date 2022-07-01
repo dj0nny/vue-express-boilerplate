@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
+const { cwd } = require("process");
 
 const errorHandler = require('./middlewares/error.middleware');
 const api = require('./routers');
@@ -22,8 +22,7 @@ app.use('/api', api);
 app.use(errorHandler);
 
 if (process.env.NODE_ENV == 'production') {
-  app.use(express.static(`${__dirname}/public`));
+  app.use(express.static(`${cwd()}/public`));
 }
 
-
-module.exports = app;
+module.exports = app; 
