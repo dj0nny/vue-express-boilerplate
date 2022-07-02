@@ -7,45 +7,49 @@ An Express - MongoDB with JWT auth boilerplate
 Clone the repository using Git: 
 
 ```bash
-  git clone https://github.com/dj0nny/emj-boilerplate.git
+  git clone https://github.com/dj0nny/vue-express-boilerplate.git
 ```
-And install emj-boilerplate's dependencies with npm
+And install server's dependencies with npm
 
 ```bash
-  cd emj-boilerplate
+  cd vue-express-boilerplate
   npm install
 ```
-    
-## Environment Variables
+And client's dependencies
 
-To run this project, you will need to add the following environment variables to your .env file
-
-`MONGO_URI`: MongoDB connection string
-
-`JWT_SECRET`: JWT secret string
+```bash
+  cd client
+  npm install
+```
 ## Run Locally
 
 Start the server
 
 ```bash
-  npm run start
+  npm run start::server
 ```
 
 Start the server in development mode:
 
 ```bash
-  npm run dev
+  npm run dev::server
 ```
 
-Lint the files:
+Run the client:
 
 ```bash
-  npm run lint
+  npm run dev::client
+```
+
+Run the client and the server together:
+
+```bash
+  npm run dev
 ```
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** Vue.js with Composition API
 
 **Server:** Node, Express
 
