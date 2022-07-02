@@ -8,6 +8,7 @@
     "start::server": "node src/index.js",
     "dev::server": "nodemon src/index.js",
     "dev::client": "npm run serve --prefix client",
+    "build::client": "npm run build --prefix client",
     "dev": "concurrently \"npm run dev::server\" \"npm run dev::client\""
   },
   "keywords": [],
