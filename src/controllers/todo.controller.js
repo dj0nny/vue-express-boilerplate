@@ -1,4 +1,4 @@
-const todoList = [{
+let todoList = [{
   id: 1,
   todo: 'clean the house',
 }];
@@ -33,16 +33,13 @@ const updateTodo = (req, res) => {
 
 const deleteTodo = (req, res) => {
   const { id } = req.params;
-  let cleanArray = [];
+  let filteredArray = [];
 
-  let index = todoList.findIndex((item) => item.id === id);
+  filteredArray = todoList.filter((item) => item.id != id);
+  todoList = filteredArray;
 
-  if (index != -1) {
-    cleanArray = todoList.splice(index, 1);
-  }
+  res.status(200).json(filteredArray);
 
-  res.status(200).json(cleanArray);
-  
 }
 
 module.exports = {

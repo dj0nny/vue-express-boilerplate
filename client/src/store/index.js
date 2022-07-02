@@ -1,14 +1,9 @@
 import { createStore } from 'vuex';
 
+import todo from './modules/todo.module';
+
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    todo,
   },
 });

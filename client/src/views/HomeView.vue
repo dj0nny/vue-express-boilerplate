@@ -1,18 +1,18 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <TodoList :list="todoList"/>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+<script setup>
+import { onMounted, computed } from 'vue';
+import { useStore } from 'vuex';
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
-};
+import TodoList from '../components/TodoList.vue';
+
+const store = useStore();
+
+const todoList = computed(() => store.state.todo.todoList);
+
+onMounted(() => {
+  store.dispatch('todo/getTodoList');
+});
 </script>
